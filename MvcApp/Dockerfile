@@ -1,9 +1,9 @@
-FROM microsoft/dotnet:2.1-aspnetcore-runtime AS base
+FROM mcr.microsoft.com/dotnet:2.1-aspnetcore-runtime AS base
 WORKDIR /app
 EXPOSE 3317
 EXPOSE 80
 
-FROM microsoft/dotnet:2.1-sdk AS build
+FROM mcr.microsoft.com/dotnet:2.1-sdk AS build
 WORKDIR /src
 COPY ["/MvcApp.csproj", "MvcApp/"]
 RUN dotnet restore "MvcApp/MvcApp.csproj"
